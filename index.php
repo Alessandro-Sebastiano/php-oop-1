@@ -1,34 +1,23 @@
 <?php
 
-class Movie
-{
-
-    public $title;
-    public $year;
-
-    function __construct(string $_title, int $_year)
-    {
-        $this->title = $_title;
-        $this->year = $_year;
-    }
+require_once __DIR__ . './Models/Movie.php';
 
 
-    public function getTitle()
-    {
-        return $this->title;
-    }
-}
+
+$first_movie = new Movie('Avatar', 2009, 'Adventure');
+
+// var_dump($first_movie);
+
+// echo $first_movie->getTitle();
 
 
-$first_movie = new Movie('Avatar', 2009);
+$second_movie = new Movie('The Irishman', 2019, 'Crime');
 
-var_dump($first_movie);
+// var_dump($second_movie);
 
-echo $first_movie->getTitle();
+// echo $second_movie->getTitle();
 
 
-$second_movie = new Movie('The Irishman', 2019);
-
-var_dump($second_movie);
-
-echo $second_movie->getTitle();
+include __DIR__ . './partials-templates/header.php';
+include __DIR__ . './partials-templates/main.php';
+include __DIR__ . './partials-templates/footer.php';
